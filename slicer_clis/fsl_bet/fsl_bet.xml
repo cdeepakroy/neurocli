@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<executable>
+  <category>Neurodebian</category>
+  <title>FSL Brain Extraction</title>
+  <description>FSL's Brain Extraction Tool (BET)</description>
+  <version>0.1.0</version>
+  <documentation-url>https://nipype.readthedocs.io/en/0.12.0/interfaces/generated/nipype.interfaces.fsl.preprocess.html#bet</documentation-url>
+  <license>Apache 2.0</license>
+  <contributor>Deepak Roy Chittajallu (Kitware)</contributor>
+  <parameters>
+    <label>IO</label>
+    <description>Input/output parameters</description>
+    <image fileExtensions=".nii">
+      <name>in_file</name>
+      <label>Input file</label>
+      <channel>input</channel>
+      <index>0</index>
+      <description>Input image to skill strip</description>
+    </image>
+    <image fileExtensions=".nii">
+      <name>out_file</name>
+      <label>Output file</label>
+      <channel>output</channel>
+      <index>1</index>
+      <description>Output skill stripped image</description>
+    </image>
+    <string-enumeration>
+      <name>output_type</name>
+      <label>Output format</label>
+      <longflag>output_type</longflag>
+      <channel>input</channel>
+      <element>NIFTI_PAIR</element>
+      <element>NIFTI_PAIR_GZ</element>
+      <element>NIFTI_GZ</element>
+      <element>NIFTI</element>
+      <default>NIFTI</default>
+      <description>Format of the output skill stripped image</description>
+    </string-enumeration>
+  </parameters>
+</executable>

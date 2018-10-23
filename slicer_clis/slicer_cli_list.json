@@ -1,0 +1,9 @@
+{
+    "dcm2nii": {
+	"type"    : "python"
+    },
+
+    "fsl_bet": {
+	"type"    : "python"
+    }
+}

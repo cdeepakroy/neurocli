@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<executable>
+  <category>Neurodebian</category>
+  <title>Dcm2nii</title>
+  <description>Converst dicom files to Nifti</description>
+  <version>0.1.0</version>
+  <documentation-url>https://nipype.readthedocs.io/en/latest/interfaces/generated/nipype.interfaces.dcm2nii.html#interfaces-dcm2nii</documentation-url>
+  <license>Apache 2.0</license>
+  <contributor>Deepak Roy Chittajallu (Kitware)</contributor>
+  <parameters>
+    <label>IO</label>
+    <description>Input/output parameters</description>
+    <directory>
+      <name>source_dir</name>
+      <label>Source directory</label>
+      <channel>input</channel>
+      <index>0</index>
+      <description>Directory containing the dicom files that need to be converted</description>
+    </directory>
+    <directory>
+      <name>output_dir</name>
+      <label>Output directory</label>
+      <channel>output</channel>
+      <index>1</index>
+      <description>Directory in which the converted file will be placed</description>
+    </directory>
+  </parameters>
+  <parameters advanced="true">
+    <label>Parameters</label>
+    <description>Conversion configuration parameters</description>
+    <file fileExtensions=".ini">
+      <name>config_file</name>
+      <label>Configuration file (*.ini)</label>
+      <flag>b</flag>
+      <channel>input</channel>
+      <description>inifile containing the configuration settings to use</description>
+    </file>
+    <boolean>
+      <name>nii_output</name>
+      <label>nii output</label>
+      <flag>n</flag>
+      <channel>input</channel>
+      <default>true</default>
+      <description>Save output as .nii (true/false)</description>
+    </boolean>
+    <boolean>
+      <name>gzip_output</name>
+      <label>gzip output</label>
+      <flag>g</flag>
+      <channel>input</channel>
+      <default>false</default>
+      <description>Save output as .gz (true/false)</description>
+    </boolean>
+    <boolean>
+      <name>anonymize</name>
+      <label>anonymize</label>
+      <flag>a</flag>
+      <channel>input</channel>
+      <default>true</default>
+      <description>Remove identifying information</description>
+    </boolean>
+  </parameters>
+</executable>
