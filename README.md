@@ -1,5 +1,5 @@
-NEUROCLIs
-=========
+NEUROCLI
+========
 
 This repo wraps a set of command-line utilities for analysis of neuroimaging data from neurodebian into Slicer CLIs and containerizes them into docker so they can called over the web through Girder's Item Tasks plugin.
 
