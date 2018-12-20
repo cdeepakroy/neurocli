@@ -28,13 +28,6 @@
   <parameters advanced="true">
     <label>Parameters</label>
     <description>Conversion configuration parameters</description>
-    <file fileExtensions=".ini">
-      <name>config_file</name>
-      <label>Configuration file (*.ini)</label>
-      <flag>b</flag>
-      <channel>input</channel>
-      <description>inifile containing the configuration settings to use</description>
-    </file>
     <boolean>
       <name>nii_output</name>
       <label>nii output</label>

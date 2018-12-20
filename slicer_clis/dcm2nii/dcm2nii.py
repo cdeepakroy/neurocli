@@ -21,9 +21,6 @@ def main(args):
     converter.inputs.nii_output = args.nii_output
     converter.inputs.gzip_output = args.gzip_output
 
-    if args.config_file:
-        converter.inputs.config_file = args.config_file
-
     print('\n>> Running Dcm2nii ... \n')
     print(converter.cmdline)
 
