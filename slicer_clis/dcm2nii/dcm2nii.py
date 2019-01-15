@@ -15,8 +15,10 @@ def main(args):
     print('\n>> CLI Parameters ...\n')
     print(args)
 
-    converter = Dcm2nii()
+    if not os.path.isdir(args.output_dir):
+        os.makedirs(args.output_dir)
 
+    converter = Dcm2nii()
     converter.inputs.source_dir = args.source_dir
     converter.inputs.output_dir = args.output_dir
     converter.inputs.anonymize = args.anonymize
@@ -25,9 +27,6 @@ def main(args):
 
     print('\n>> Running Dcm2nii ... \n')
     print(converter.cmdline)
-
-    if not os.path.isdir(args.output_dir):
-        os.makedirs(args.output_dir)
 
     converter.run()
 
