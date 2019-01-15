@@ -1,5 +1,7 @@
 from __future__ import print_function
 
+import os
+
 from nipype.interfaces.dcm2nii import Dcm2nii
 
 from ctk_cli import CLIArgumentParser
@@ -23,6 +25,9 @@ def main(args):
 
     print('\n>> Running Dcm2nii ... \n')
     print(converter.cmdline)
+
+    if not os.path.isdir(args.output_dir):
+        os.makedirs(args.output_dir)
 
     converter.run()
 
